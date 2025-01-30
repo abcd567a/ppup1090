@@ -25,6 +25,7 @@ fi
 echo " "
 echo  -e "\e[1;35mCreating folder \e[1;32m" ${INSTALL_FOLDER}  "\e[39m"
 mkdir ${INSTALL_FOLDER}
+chmod 777 ${INSTALL_FOLDER}
 sleep 2
 echo " "
 if [[ -d ${INSTALL_FOLDER_OLD} ]];
