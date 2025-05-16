@@ -61,6 +61,16 @@ elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == armv7l ]]; then
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
+elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == x86_64 ]]; then
+   BINARY_FOLDER=X86-64
+   echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
+   sleep 2;
+
+elif [[ ${OS_VERSION} == trixie && ${ARCHITECTURE} == x86_64 ]]; then
+   BINARY_FOLDER=X86-64
+   echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
+   sleep 2;
+
 elif [[ ${OS_VERSION} == bullseye && ${ARCHITECTURE} == aarch64 ]]; then
    BINARY_FOLDER=Bullseye-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
