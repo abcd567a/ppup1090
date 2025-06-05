@@ -49,25 +49,21 @@ sleep 2
 unzip ${INSTALL_FOLDER}/${VERSION}.zip -d ${INSTALL_FOLDER}
 
 echo -e "\e[1;32mDetecting which binary should be copied to" ${INSTALL_FOLDER} " \e[39m"
-sleep 2
+sleep 2;
+
 BINARY_FOLDER=""
-if [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == aarch64 ]]; then
+if [[ ${OS_VERSION} == trixie && ${ARCHITECTURE} == aarch64 ]]; then
+   BINARY_FOLDER=Bookworm-64
+   echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
+   sleep 2;
+
+elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == aarch64 ]]; then
    BINARY_FOLDER=Bookworm-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
 elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == armv7l ]]; then
    BINARY_FOLDER=Bookworm-32
-   echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
-   sleep 2;
-
-elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == x86_64 ]]; then
-   BINARY_FOLDER=X86-64
-   echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
-   sleep 2;
-
-elif [[ ${OS_VERSION} == trixie && ${ARCHITECTURE} == x86_64 ]]; then
-   BINARY_FOLDER=X86-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
@@ -86,13 +82,13 @@ elif [[ ${OS_VERSION} == buster && ${ARCHITECTURE} == armv7l ]]; then
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${ARCHITECTURE} == i686 ]]; then
-   BINARY_FOLDER=I686-32
+elif [[ ${ARCHITECTURE} == x86_64 ]]; then
+   BINARY_FOLDER=X86-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${ARCHITECTURE} == x86_64 ]]; then
-   BINARY_FOLDER=X86-64
+elif [[ ${ARCHITECTURE} == i686 ]]; then
+   BINARY_FOLDER=I686-32
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
