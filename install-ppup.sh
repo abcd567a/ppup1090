@@ -41,7 +41,7 @@ sleep 2
 wget -O ${INSTALL_FOLDER}/${VERSION}.zip https://www.coaa.co.uk/${VERSION}.zip
 
 echo -e "\e[1;32mInstalling package \"unzip\" if not already installed \e[39m"
-apt install -y --no-install-suggests --no-install-recommends unzip;
+apt --no-install-recommends install -y unzip;
 
 echo -e "\e[1;32mUnzipping compiled binaries \e[39m"
 sleep 2
