@@ -40,9 +40,8 @@ echo  -e "\e[1;35mDownloading compiled binaries \e[32m" ${VERSION}.zip "\e[1;35m
 sleep 2
 wget -O ${INSTALL_FOLDER}/${VERSION}.zip https://www.coaa.co.uk/${VERSION}.zip
 
-if [[ ! `dpkg-query -W unzip` ]]; then
-  apt install -y --no-install-recommends unzip;
-fi
+echo -e "\e[1;32mInstalling package \"unzip\" if not already installed \e[39m"
+apt install -y unzip;
 
 echo -e "\e[1;32mUnzipping compiled binaries \e[39m"
 sleep 2
