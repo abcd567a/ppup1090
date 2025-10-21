@@ -52,42 +52,43 @@ echo -e "\e[1;32mDetecting which binary should be copied to" ${INSTALL_FOLDER} "
 sleep 2;
 
 BINARY_FOLDER=""
-if [[ ${OS_VERSION} == trixie && ${ARCHITECTURE} == aarch64 ]]; then
+if [[ ${OS_VERSION} == trixie && ${ARCHITECTURE} == arm64 ]]; then
    BINARY_FOLDER=Bookworm-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == aarch64 ]]; then
+elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == arm64 ]]; then
    BINARY_FOLDER=Bookworm-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == armv7l ]]; then
+elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == armhf ]]; then
    BINARY_FOLDER=Bookworm-32
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${OS_VERSION} == bullseye && ${ARCHITECTURE} == aarch64 ]]; then
+elif [[ ${OS_VERSION} == bullseye && ${ARCHITECTURE} == arm64 ]]; then
    BINARY_FOLDER=Bullseye-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${OS_VERSION} == bullseye && ${ARCHITECTURE} == armv7l ]]; then
+elif [[ ${OS_VERSION} == bullseye && ${ARCHITECTURE} == armhf ]]; then
    BINARY_FOLDER=Bullseye-32
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${OS_VERSION} == buster && ${ARCHITECTURE} == armv7l ]]; then
+elif [[ ${OS_VERSION} == buster && ${ARCHITECTURE} == armhf ]]; then
    BINARY_FOLDER=Buster-32
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${ARCHITECTURE} == x86_64 ]]; then
+elif [[ `uname -m` == x86_64 ]]; then
    BINARY_FOLDER=X86-64
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
-elif [[ ${ARCHITECTURE} == i686 ]]; then
+
+elif [[ `uname -m` == i686 ]]; then
    BINARY_FOLDER=I686-32
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
