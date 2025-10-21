@@ -8,7 +8,8 @@ OS_ID=`lsb_release -si`
 OS_RELEASE=`lsb_release -sr`
 OS_VERSION=`lsb_release -sc`
 echo -e "\e[1;35mDETECTED OS VERSION \e[32m" ${OS_ID} ${OS_RELEASE} ${OS_VERSION}  "\e[39m"
-ARCHITECTURE=`uname -m`
+#ARCHITECTURE=`uname -m`
+ARCHITECTURE=`dpkg --print-architecture`
 echo -e "\e[1;35mDetected architecture \e[1;32m" ${ARCHITECTURE}  "\e[39m"
 echo " "
 sleep 2
