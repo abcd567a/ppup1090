@@ -63,7 +63,7 @@ elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == arm64 ]]; then
    sleep 2;
 
 elif [[ ${OS_VERSION} == bookworm && ${ARCHITECTURE} == armhf ]]; then
-   BINARY_FOLDER=Bookworm-32
+   BINARY_FOLDER=Bullseye-32
    echo -e "\e[1;32mUsing Binary in Folder:" ${BINARY_FOLDER} "\e[39m";
    sleep 2;
 
